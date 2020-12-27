@@ -1,0 +1,31 @@
+<div class="row">
+    {{#each games}}
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-header">
+                {{nombre}}
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <p class="card-text">{{descripcion}}</p>
+                    <h3 class="card-text">{{genero}}</h3>
+                </div>
+            </div>
+            <form action="/videojuegos/descargar/{{_id}}" method="post">
+                <button class="btn btn-success btn-block btn-sm" type="submit">
+                    Descargar
+                </button>
+            </form>
+            <div class="card-footer text-muted">
+                {{descargas}}
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <p class="lead">No existe ningun videojuego aun</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
