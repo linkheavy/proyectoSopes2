@@ -1,0 +1,22 @@
+<div class="row">
+    {{#each games}}
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-header">
+                {{nombre}}
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <p class="card-text">{{descripcion}}</p>
+                    <h3 class="card-text">{{genero}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <p class="lead">No tienes juegos en tu biblioteca</p>
+        </div>
+    </div>
+    {{/each}}

@@ -1,0 +1,39 @@
+<div class="row">
+    {{#each games}}
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-header">
+                {{nombre}}
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <p class="card-text">{{descripcion}}</p>
+                    <h3 class="card-text">{{genero}}</h3>
+                </div>
+            </div>
+            <form action="/videojuegos/eliminar/{{_id}}?_method=DELETE" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="btn btn-danger btn-block btn-sm" type="submit">
+                    Eliminar
+                </button>
+            </form>
+            <div class="card-footer text-muted">
+                {{descargas}}
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <p class="lead">No existe ningun videojuego aun</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<div class="row">
+    <div class="card mx-auto">
+        <div class="card-body">
+            <a href="/videojuegos/agregar" class="btn btn-success btn-block">Agregar Videojuego</a>
+        </div>
+    </div>
+</div>
