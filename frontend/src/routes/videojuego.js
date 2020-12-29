@@ -32,7 +32,7 @@ router.post('/videojuegos/new-game', (req, res) => {
         let promise = new Promise((resolve, reject) => {
             Request.post({
                 "headers": { "content-type": "application/json" },
-                "url": "http://localhost:8000/videojuegos/new-game",
+                "url": "http://34.70.68.14:8000/videojuegos/new-game",
                 "body": JSON.stringify({
                     "nombre": nombre,
                     "descripcion": descripcion,
@@ -60,7 +60,7 @@ router.post('/videojuegos/new-game', (req, res) => {
 router.get('/videojuegos', (req, res) => {
     var Request = require("request");
     let promise = new Promise((resolve, reject) => {
-        Request.get("http://localhost:8000/videojuegos", (error, response, body) => {
+        Request.get("http://34.70.68.14:8000/videojuegos", (error, response, body) => {
             if (error) {
                 console.log(error);
                 reject(error);
@@ -80,7 +80,7 @@ router.get('/videojuegos', (req, res) => {
 router.get('/videojuegos/descargas', (req, res) => {
     var Request = require("request");
     let promise = new Promise((resolve, reject) => {
-        Request.get("http://localhost:8000/videojuegos", (error, response, body) => {
+        Request.get("http://34.70.68.14:8000/videojuegos", (error, response, body) => {
             if (error) {
                 console.log(error);
                 reject(error);
@@ -107,7 +107,7 @@ router.post('/videojuegos/descargar/:id', (req, res) => {
     let promise = new Promise((resolve, reject) => {
         Request.post({
             "headers": { "content-type": "application/json" },
-            "url": "http://localhost:8000/videojuegos/descargar",
+            "url": "http://34.70.68.14:8000/videojuegos/descargar",
             "body": JSON.stringify({
                 "id": req.params.id,
                 "usuario": req.user.id

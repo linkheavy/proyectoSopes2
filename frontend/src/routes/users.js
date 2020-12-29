@@ -36,7 +36,7 @@ router.post('/users/signup', (req, res) => {
         let promise = new Promise((resolve, reject) => {
             Request.post({
                 "headers": { "content-type": "application/json" },
-                "url": "http://localhost:8000/users/signup",
+                "url": "http://34.70.68.14:8000/users/signup",
                 "body": JSON.stringify({
                     "name": name,
                     "email": email,
