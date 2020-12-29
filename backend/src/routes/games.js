@@ -3,8 +3,8 @@ const router = express.Router();
 
 const Game = require('../models/Game');
 
-router.get('/games', async(req, res) => {
-    var id = req.query.id;
+router.post('/games', async(req, res) => {
+    const { id } = req.body;
     const games = await Game.find({user: id}).lean();
     res.json(games);
 });
